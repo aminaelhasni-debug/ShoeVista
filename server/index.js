@@ -12,6 +12,9 @@ app.use(cors());
 
 app.use(express.json());
 
+
+app.use("/qpi", router);
+
 const PORT = process.env.PORT || 5000;
 
 const connectDB = async () => {
