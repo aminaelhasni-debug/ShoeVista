@@ -12,8 +12,8 @@ app.use(cors());
 
 app.use(express.json());
 
+app.use("/api", router);
 
-app.use("/qpi", router);
 
 const PORT = process.env.PORT || 5000;
 

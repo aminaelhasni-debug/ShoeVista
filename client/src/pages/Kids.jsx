@@ -12,11 +12,10 @@ const Kids = () => {
         const fetchData = async () => {
             try {
                 const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/category/child`);
-                // same for kids & women 
-                const productsarray= Array.isArray(res.data) ? res.data : []; 
-                // array needed 
+                //  before storing ensure response is an array
+                const kidsArray= Array.isArray(res.data) ? res.data : [];
                 if (isMounted) {
-                    const sorted = productsarray.sort((a, b) => parseInt(b.reviews) - parseInt(a.reviews))
+                    const sorted = kidsArray.sort((a, b) => parseInt(b.reviews) - parseInt(a.reviews))
                     setProducts(sorted);
                     setLoading(false);
                 }

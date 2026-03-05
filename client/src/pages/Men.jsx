@@ -12,10 +12,10 @@ const Men = () => {
         const fetchData = async () => {
             try {
                 const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/category/men`);
-                const productsarray= Array.isArray(res.data) ? res.data : []; 
-                // array needed 
+                // same thing for Men.jsx 
+                const menArray= Array.isArray(res.data) ? res.data : [];
                 if (isMounted) {
-                    const sorted = productsarray.sort((a, b) => parseInt(b.reviews) - parseInt(a.reviews))
+                    const sorted = menArray.sort((a, b) => parseInt(b.reviews) - parseInt(a.reviews))
                     setProducts(sorted);
                     setLoading(false);
                 }
